@@ -9,12 +9,12 @@
 .home {
   width: 100%;
   height: 100%;
+  text-align: center;
 }
 </style>
 
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {

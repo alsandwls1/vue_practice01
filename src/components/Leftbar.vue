@@ -10,6 +10,12 @@
           <li><router-link to="/about">ABOUT</router-link></li>
           <li><router-link to="/sign-in">SIGN IN</router-link></li>
           <li><router-link to="/firebase-data">FIREBASE DATA</router-link></li>
+          <li><router-link to="/firebase-data1">FIREBASE TEST1</router-link></li>
+          <li><router-link to="/firebase-data2">FIREBASE TEST2</router-link></li>
+          <li><router-link to="/firebase-data3">FIREBASE TEST3</router-link></li>
+          <li><router-link to="/firebase-data4">FIREBASE TEST4</router-link></li>
+          <li><router-link to="/firebase-data5">FIREBASE TEST5</router-link></li>
+          <li><router-link to="/firebase-data6">FIREBASE TEST6</router-link></li>
         </ul>
     </div>
   </div>
@@ -41,13 +47,13 @@ li > a{
   text-decoration: none;
 }
 li > .router-link-exact-active {
-  background-color: rgb(255, 73, 73);
+  background-color: rgba(255, 73, 73, 0.8);
   color: white;
 }
 
 /* Change the link color on hover, focus */
-li > a:hover {
-  background-color: rgb(255, 73, 73);
+li > a:hover:not(.router-link-exact-active) {
+  background-color: rgba(255, 73, 73, 0.3);
   color: white;
 }
 li > a:focus {
