@@ -28,6 +28,11 @@ export default new Router({
       path: '/firebase-data',
       name: 'firebaseData',
       component: () => import('./views/FirebaseData.vue')
+    },
+    {
+      path: '/product-list',
+      name: 'productList',
+      component: () => import('./views/ProductList.vue')
     }
   ]
 })
