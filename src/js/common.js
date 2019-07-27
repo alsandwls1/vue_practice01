@@ -16,7 +16,6 @@ exports.isEmpty = function(value) {
 exports.numCurrency = function(value) {
     if(this.isEmpty(value)) return '';
     
-/* eslint-disable */
     var len, point, str, num; 
     num = String(value);
     point = num.length % 3 ;

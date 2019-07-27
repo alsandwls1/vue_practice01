@@ -14,11 +14,11 @@
               v-on:after-enter="afterEnter"
               v-on:leave="leave">
               <ul v-if="isShow1">
-                <li><router-link to="/" >ITEM01</router-link></li>
-                <li><router-link to="/about">about</router-link></li>
-                <li><router-link to="/sign-in">sign in</router-link></li>
-                <li><router-link to="/firebase-data">firebase data</router-link></li>
-                <li><router-link to="/product-list">product list</router-link></li>
+                <li><router-link to="/" >뷰 설명</router-link></li>
+                <li><router-link to="/sign-in">Sign in</router-link></li>
+                <li><router-link to="/firebase-data">Firebase CRUD</router-link></li>
+                <li><router-link to="/product-list">상품 리스트</router-link></li>
+                <li><router-link to="/about">기본 디렉티브</router-link></li>
                 <li><router-link to="/6">ITEM06</router-link></li>
               </ul> 
             </transition>
