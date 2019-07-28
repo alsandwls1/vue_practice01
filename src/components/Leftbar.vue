@@ -18,8 +18,8 @@
                 <li><router-link to="/sign-in">Sign in</router-link></li>
                 <li><router-link to="/firebase-data">Firebase CRUD</router-link></li>
                 <li><router-link to="/product-list">상품 리스트</router-link></li>
-                <li><router-link to="/about">기본 디렉티브</router-link></li>
-                <li><router-link to="/6">ITEM06</router-link></li>
+                <li><router-link to="/basic-directive">기본 디렉티브</router-link></li>
+                <li><router-link to="/parent-page">데이터전달 컴포넌트</router-link></li>
               </ul> 
             </transition>
           </li>

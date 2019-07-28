@@ -1,5 +1,5 @@
 <template>
-  <div class="about" v-cloak>
+  <div class="basic-directive" v-cloak>
     <h2>기본 디렉티브 연습</h2>
     <hr>
     <div>
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style>
-.about > div {
+.basic-directive > div {
   border-bottom: 1px solid rgba(154, 154, 154, 1);
   padding-bottom:5px;
 }

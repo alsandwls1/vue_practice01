@@ -14,9 +14,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/About.vue')
+      path: '/basic-directive',
+      name: 'basicDirective',
+      component: () => import('./views/BasicDirective.vue')
     },
     {
       path: '/sign-in',
@@ -33,6 +33,11 @@ export default new Router({
       path: '/product-list',
       name: 'productList',
       component: () => import('./views/ProductList.vue')
+    },
+    {
+      path: '/parent-page',
+      name: 'parentPage',
+      component: () => import('./views/ParentPage.vue')
     }
   ]
 })
