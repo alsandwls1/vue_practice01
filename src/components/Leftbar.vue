@@ -7,7 +7,7 @@
     <div class="menu-list">
         <ul>
           <li>
-            <a class="dep1" v-on:click="isShow1 = !isShow1">HOME</a>
+            <a class="dep1" v-on:click="isShow1 = !isShow1">뷰(기본)</a>
             <transition 
               name="accordion"
               v-on:enter="enter"
@@ -15,7 +15,6 @@
               v-on:leave="leave">
               <ul v-if="isShow1">
                 <li><router-link to="/" >뷰 설명</router-link></li>
-                <li><router-link to="/sign-in">Sign in</router-link></li>
                 <li><router-link to="/firebase-data">Firebase CRUD</router-link></li>
                 <li><router-link to="/product-list">상품 리스트</router-link></li>
                 <li><router-link to="/basic-directive">기본 디렉티브</router-link></li>
@@ -26,14 +25,14 @@
         </ul>
         <ul>
           <li>
-            <a class="dep1" v-on:click="isShow2 = !isShow2">HOME</a>
+            <a class="dep1" v-on:click="isShow2 = !isShow2">페이지(링크)</a>
             <transition 
               name="accordion"
               v-on:enter="enter"
               v-on:after-enter="afterEnter"
               v-on:leave="leave">
               <ul v-if="isShow2">
-                <li><router-link to="/" >ITEM01</router-link></li>
+                <li><router-link to="/sign-in" >회원가입</router-link></li>
                 <li><router-link to="/2">ITEM02</router-link></li>
                 <li><router-link to="/3">ITEM03</router-link></li>
                 <li><router-link to="/4">ITEM04</router-link></li>

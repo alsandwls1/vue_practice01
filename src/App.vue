@@ -4,7 +4,9 @@
     <div class="container">
       <Leftbar msg="-LEFTBAR TITLE-"></Leftbar>
       <div class="content">
-        <router-view/>
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
       </div>
     </div>
     <Footer msg="FOOTER AREA"></Footer>

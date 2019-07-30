@@ -12,6 +12,7 @@ p {font-size: 15px; line-height: 1.40}
 #app, .header, .footer, .leftbar, .content, .container {
     /* border: 1px solid black;  */
     box-sizing: border-box;
+    overflow: auto;
 }
 
 #app {

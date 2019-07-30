@@ -1,19 +1,11 @@
 /* eslint-disable no-console */
 
-/**
- * undefind, null, '' 체크하여 boolean을 리턴한다.
- */
-// cm.isEmpty = function(value) {
-//     if(typeof value != 'undefined' && value != null && value.length > 0) return false;
-//     else return true;
-// }
-
-exports.isEmpty = function(value) {
-    if(typeof value != 'undefined' && value != null && value != '') return false;
-    else return true;
+function isEmpty(value) {
+    if(typeof value == 'undefined' || value == null || value.length <= 0) return true;
+    else return false;
 }
 
-exports.numCurrency = function(value) {
+function numCurrency(value) {
     if(this.isEmpty(value)) return '';
     
     var len, point, str, num; 
@@ -30,4 +22,9 @@ exports.numCurrency = function(value) {
 
     return str;
     //.replace(/\B(?=(\d{3})+(?!\d))/g, ","); -> 정규식이 안써지는건지 뭘까
+}
+
+export {
+    isEmpty, 
+    numCurrency
 }

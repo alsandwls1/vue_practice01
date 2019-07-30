@@ -38,6 +38,12 @@ export default new Router({
       path: '/parent-page',
       name: 'parentPage',
       component: () => import('./views/ParentPage.vue')
+    },
+    {
+      path: '/next-page',
+      name: 'nextPage',
+      component: () => import('./views/NextPage.vue'),
+      props:true
     }
   ]
 })

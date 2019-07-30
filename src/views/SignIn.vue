@@ -1,38 +1,69 @@
 <template>
     <div class="signin">
         <div>
-            <h4>참고문서</h4>
-            <p>https://firebase.google.com/docs/firestore/quickstart?hl=ko</p>
-        </div>
-
-        <div>
             <h2>회원가입</h2>
-            <span>NAME: </span><input type="text" v-model="user.name">
-            <span>EMAIL: </span><input type="text" v-model="user.email"> 
-            <button v-on:click="addUserData">등록</button>
-        </div>
-
-        <div>
-            <h2>회원목록</h2>
-            <button v-on:click="getUserList">조회</button>
-            <ul>
-                <li v-for="(u, index) in userList" v-bind:key="index">{{ u.name }}: {{ u.email }}</li>
-            </ul>
-
+            <div class="member-info">
+                <table>
+                    <tr>
+                        <td>이메일</td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호확인</td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>이름</td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>휴대폰번호</td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>생년월일</td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>성별</td>
+                        <td>
+                            <input type="radio" name="gender" id="m" value="1"><label for="m">남자</label>
+                            <input type="radio" name="gender" id="f" value="2"><label for="f">여자</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <button class="btn-send" v-on:click="addUserData">등록</button>
         </div>
     </div>
 </template>
 
 <style scoped>
 .signin {
+    width: 500px;
+    margin: 0px auto;
     padding-top: 20px;
     text-align: center;
 }
-.signin > div {
-    margin-bottom: 50px;
+.member-info {
+    margin-top: 30px;
+    /* border: 1px solid rgb(153, 153, 153); */
+    /* background-color: #fff; */
 }
-button {
-    margin: 0px 5px;
+td {
+    padding: 15px 13px;
+    width: 400px;
+    text-align: left;
+    border: 1px solid rgb(153, 153, 153);
+}
+
+.btn-send {
+    margin-top: 20px;
+    float: right;
 }
 </style>
 
