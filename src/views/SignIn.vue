@@ -6,33 +6,39 @@
                 <table>
                     <tr>
                         <td>이메일</td>
-                        <td><input type="text" name="" id=""></td>
+                        <td>
+                            <input type="text" v-model="userInfo.email">
+                            <span class="error" v-show="error.email">이메일을 입력해주세요</span>
+                        </td>
                     </tr>
                     <tr>
                         <td>비밀번호</td>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" v-model="userInfo.password"></td>
                     </tr>
                     <tr>
                         <td>비밀번호확인</td>
-                        <td><input type="text" name="" id=""></td>
+                        <td>
+                            <input type="text" v-model="confirmPw">
+                            <span class="error" v-show="error.confirmPw">일치하지 않는 비밀번호입니다. 확인해주세요.</span>
+                        </td>
                     </tr>
                     <tr>
                         <td>이름</td>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" v-model="userInfo.name"></td>
                     </tr>
                     <tr>
                         <td>휴대폰번호</td>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" v-model="userInfo.phone"></td>
                     </tr>
                     <tr>
                         <td>생년월일</td>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" v-model="userInfo.birth"></td>
                     </tr>
                     <tr>
                         <td>성별</td>
                         <td>
-                            <input type="radio" name="gender" id="m" value="1"><label for="m">남자</label>
-                            <input type="radio" name="gender" id="f" value="2"><label for="f">여자</label>
+                            <input type="radio" v-model="userInfo.gender" id="m" value="1"><label for="m">남자</label>
+                            <input type="radio" v-model="userInfo.gender" id="f" value="2"><label for="f">여자</label>
                         </td>
                     </tr>
                 </table>
@@ -65,20 +71,36 @@ td {
     margin-top: 20px;
     float: right;
 }
+.error {
+    color: red;
+}
 </style>
 
 
 <script>
-/* eslint-disable no-console */ 
+/* eslint-disable */ 
 import firebase from 'firebase'
+import {isEmpty} from '@/js/common.js'  
 
 var db = firebase.firestore();
 var data = {
-    user: {
-        'name': '',
-        'email': ''
+    confirmPw:'',
+    userInfo : {
+        'email':'',
+        'password':'',
+        'name':'',
+        'phone':'',
+        'birth':'',
+        'gender':'1',
     },
-    userList: [],
+    error: {
+        'email': false,
+        'pw': false,
+        'confirmPw': false,
+        'name': false,
+        'phone': false,
+        'birth': false
+    }
 }
 
 export default {
@@ -87,18 +109,22 @@ export default {
         return data;
     },
     methods: {
+        
+        
         // 사용자정보 등록
         addUserData () {
-            var user = this.user;
+            var info = this.userInfo;
+            db.collection('test-kimjungmin/member/member')
+                .doc()
+                .set(info, {merge:true})
+                .then((r) => {
+                    console.log(r)
+                })
+                .catch(e => {
+                    alert('error=>', e)
+                })
+            
 
-            db.collection('users').add(this.user)
-            .then(() => {
-                user.name = '';
-                user.email = '';
-            })
-            .catch((error) => {
-                console.log("error=>", error);
-            })
         },
         // 사용자 목록 조회
         getUserList () {
