@@ -44,6 +44,11 @@ export default new Router({
       name: 'nextPage',
       component: () => import('./views/NextPage.vue'),
       props:true
+    },
+    {
+      path: '/inquiry-list',
+      name: 'inquiryList',
+      component: () => import('./views/InquiryList.vue')
     }
   ]
 })

@@ -33,7 +33,7 @@
               v-on:leave="leave">
               <ul v-if="isShow2">
                 <li><router-link to="/sign-in" >회원가입</router-link></li>
-                <li><router-link to="/2">ITEM02</router-link></li>
+                <li><router-link to="/inquiry-list">게시판목록</router-link></li>
                 <li><router-link to="/3">ITEM03</router-link></li>
                 <li><router-link to="/4">ITEM04</router-link></li>
                 <li><router-link to="/5">ITEM05</router-link></li>
@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     enter (element) {
-      console.log('enter=>', element);
+      // console.log('enter=>', element);
       const width = getComputedStyle(element).width;
       element.style.width = width;
       element.style.position = 'absolute';
@@ -99,11 +99,11 @@ export default {
       });
     },
     afterEnter (element) {
-      console.log('afterEnter=>', element);
+      // console.log('afterEnter=>', element);
       element.style.height = 'auto';
     },
     leave (element) {
-      console.log('leave=>', element);
+      // console.log('leave=>', element);
       const height = getComputedStyle(element).height;
 
       element.style.height = height;
